@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "Sitecore.CH.Cli.Plugin.EmailTemplates - Executable": {
+      "commandName": "Executable",
+      "executablePath": "C:\\code\\ch-cli\\ch-cli-win-x64.1.1.5\\ch-cli.exe",
+      "commandLineArgs": "email-templates export -o C:\\code\\ch-cli\\ch-cli-win-x64.1.1.5\\import-export\\VAL"
+    },
+    "Sitecore.CH.Cli.Plugin.EmailTemplates - Default": {
+      "commandName": "Project",
+      "commandLineArgs": "ch-cli.exe email-templates --help",
+      "workingDirectory": "C:\\code\\ch-cli\\ch-cli-win-x64.1.1.5",
+      "nativeDebugging": false
+    }
+  }
+}

@@ -4,6 +4,6 @@ This project is intended to help in the development and aggregation of custom pl
 
 A plugin is a library that extends the CLI with additional commands. With the CLI, you can manage content and media from a Content Hub instance. The CLI uses the SDK to communicate with Content Hub instances through the API, based on commands in the form of lines of text. 
 
-Before you start you need to install ch-cli and configure endpoints as described in [the documentation](https://doc.sitecore.com/ch/en/developers/42/cloud-dev/integration-tools--content-hub-cli.html).
+Before you start you need to install ch-cli and configure endpoints as described in the [Sitecore documentation](https://doc.sitecore.com/ch/en/developers/42/cloud-dev/integration-tools--content-hub-cli.html).
 
 Each folder holds a separate plugin inplementation and contains its own dedicated README.
