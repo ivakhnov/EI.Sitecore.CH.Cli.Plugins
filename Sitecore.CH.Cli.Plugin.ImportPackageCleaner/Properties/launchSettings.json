@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "Sitecore.CH.Cli.Plugin.ImportPackageCleaner - Executable": {
+      "commandName": "Executable",
+      "executablePath": "C:\\code\\ch-cli\\ch-cli-win-x64.1.1.5\\ch-cli.exe",
+      "commandLineArgs": "ch-cli.exe import-package-cleaner clean -d C:\\Users\\eie\\Downloads\\package-20240530_083222 -portal true -urls true"
+    },
+    "Sitecore.CH.Cli.Plugin.ImportPackageCleaner - Default": {
+      "commandName": "Project",
+      "commandLineArgs": "ch-cli.exe import-package-cleaner --help",
+      "workingDirectory": "C:\\code\\ch-cli\\ch-cli-win-x64.1.1.5",
+      "nativeDebugging": false
+    }
+  }
+}
