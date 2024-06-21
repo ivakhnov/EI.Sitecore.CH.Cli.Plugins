@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Sitecore.CH.Cli.Core" Version="1.1.5" />
+  </ItemGroup>
+
+  <!-- On each build of the project, the plugin will be added to the installation folder of the cli  -->
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	  <Exec Command="md %25USERPROFILE%25\.ch-cli\plugins\$(TargetName)&#xD;&#xA;copy $(OutDir)\$(TargetFileName) %25USERPROFILE%25\.ch-cli\plugins\$(TargetName)" />
+  </Target>
+
+</Project>
