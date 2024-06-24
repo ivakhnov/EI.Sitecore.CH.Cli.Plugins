@@ -47,7 +47,7 @@ namespace Sitecore.CH.Cli.Plugin.ImportPackageCleaner.Services
             return token;
         }
 
-        public void UpdateToken(JToken token, bool shouldCleanPortalComponents, bool shouldCleanActionApiUrls)
+        public void UpdateToken(JToken token, bool shouldCleanPortalComponents, bool shouldCleanActionVariables)
         {
             var propertiesToLookList = new Dictionary<string, object>()
             {
@@ -80,8 +80,8 @@ namespace Sitecore.CH.Cli.Plugin.ImportPackageCleaner.Services
             if (shouldCleanPortalComponents)
                 CleanPortalPageComponents(token);
 
-            if (shouldCleanActionApiUrls)
-                CleanActionApiUrls(token);
+            if (shouldCleanActionVariables)
+                CleanActionVariables(token);
 
             CleanUserGroupIdentifiers(token);
         }
@@ -147,13 +147,17 @@ namespace Sitecore.CH.Cli.Plugin.ImportPackageCleaner.Services
             }
         }
 
-        private void CleanActionApiUrls(JToken token)
+        private void CleanActionVariables(JToken token)
         {
             if (TokenIsOfDefinition(token, Constants.Definition.Action))
             {
                 var aPIUrlToken = token.SelectToken("data.properties.Settings.apiUrl") as JValue;
                 if (aPIUrlToken != null)
                     aPIUrlToken.Value = string.Empty;
+
+                var headersToken = token.SelectToken("data.properties.Settings.headers") as JArray;
+                if (headersToken != null)
+                    headersToken.Clear();
 
                 var serviceBusConnectionString = token.SelectToken("data.properties.Settings.connectionString") as JValue;
                 if (serviceBusConnectionString != null)
