@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sitecore.CH.Cli.Plugin.EmailTemplates", "Sitecore.CH.Cli.Plugin.EmailTemplates\Sitecore.CH.Cli.Plugin.EmailTemplates.csproj", "{43B4D13A-B48F-4BE0-9507-D9CB228735F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.CH.Cli.Plugin.ImportPackageCleaner", "Sitecore.CH.Cli.Plugin.ImportPackageCleaner\Sitecore.CH.Cli.Plugin.ImportPackageCleaner.csproj", "{7E054764-5720-487B-BA54-64F8F6202E0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sitecore.CH.Cli.Plugin.ImportPackageCleaner", "Sitecore.CH.Cli.Plugin.ImportPackageCleaner\Sitecore.CH.Cli.Plugin.ImportPackageCleaner.csproj", "{7E054764-5720-487B-BA54-64F8F6202E0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.CH.Cli.Plugin.ImportPackageSettingApplier", "Sitecore.CH.Cli.Plugin.ImportPackageSettingApplier\Sitecore.CH.Cli.Plugin.ImportPackageSettingApplier.csproj", "{AEC8CD5E-56DF-4027-9A08-D01F336D4DB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{7E054764-5720-487B-BA54-64F8F6202E0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E054764-5720-487B-BA54-64F8F6202E0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E054764-5720-487B-BA54-64F8F6202E0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEC8CD5E-56DF-4027-9A08-D01F336D4DB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEC8CD5E-56DF-4027-9A08-D01F336D4DB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEC8CD5E-56DF-4027-9A08-D01F336D4DB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEC8CD5E-56DF-4027-9A08-D01F336D4DB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

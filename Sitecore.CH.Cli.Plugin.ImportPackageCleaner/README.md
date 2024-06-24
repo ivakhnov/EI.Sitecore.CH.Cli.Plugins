@@ -24,5 +24,5 @@ Commands:
 Scripts supports the following parameters:
 
     ShouldCleanPortalComponents - If Portal Components should be cleaned from Portal Pages in related section. Default is FALSE.
-    ShouldCleanActionApiUrls - If should clean the API urls in M.Action entities. Default is FALSE.
+    ShouldCleanActionVariables - If should clean the variable details in M.Action entities (e.g. apiUrl, headers, connectionString). Default is FALSE.
 

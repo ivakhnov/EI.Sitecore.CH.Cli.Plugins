@@ -3,7 +3,7 @@
     "Sitecore.CH.Cli.Plugin.ImportPackageCleaner - Executable": {
       "commandName": "Executable",
       "executablePath": "C:\\code\\ch-cli\\ch-cli-win-x64.1.1.5\\ch-cli.exe",
-      "commandLineArgs": "ch-cli.exe import-package-cleaner clean -d C:\\Users\\eie\\Downloads\\package-20240530_083222 -portal true -urls true"
+      "commandLineArgs": "ch-cli.exe import-package-cleaner clean -d C:\\Users\\eie\\Downloads\\package-20240621_135338_Unilever_triggers_package_cleaned -portal true -actionvars true"
     },
     "Sitecore.CH.Cli.Plugin.ImportPackageCleaner - Default": {
       "commandName": "Project",

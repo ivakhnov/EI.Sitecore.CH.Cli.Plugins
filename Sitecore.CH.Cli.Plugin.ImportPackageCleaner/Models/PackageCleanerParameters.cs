@@ -6,7 +6,7 @@ namespace Sitecore.CH.Cli.Plugin.ImportPackageCleaner.Models
     {
         public FileInfo PackageDir { get; set; }
         public bool ShouldCleanPortalComponents { get; set; }
-        public bool ShouldCleanActionApiUrls { get; set; }
+        public bool ShouldCleanActionVariables { get; set; }
     }
    
 

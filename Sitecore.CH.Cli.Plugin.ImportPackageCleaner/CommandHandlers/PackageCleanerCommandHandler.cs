@@ -51,7 +51,7 @@ namespace Sitecore.CH.Cli.Plugin.ImportPackageCleaner.CommandHandlers
                 foreach (var jsonFilePath in jsonFilePaths)
                 {
                     var token = _packageCleanerService.GetToken(jsonFilePath);
-                    _packageCleanerService.UpdateToken(token, Parameters.ShouldCleanPortalComponents, Parameters.ShouldCleanActionApiUrls);
+                    _packageCleanerService.UpdateToken(token, Parameters.ShouldCleanPortalComponents, Parameters.ShouldCleanActionVariables);
                     _packageCleanerService.SaveFile(token, jsonFilePath);
                 }
                 _renderer.WriteLine($"Done!");

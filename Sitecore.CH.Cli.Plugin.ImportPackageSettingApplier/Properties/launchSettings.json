@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "Sitecore.CH.Cli.Plugin.ImportPackageSettingApplier - Executable": {
+      "commandName": "Executable",
+      "executablePath": "C:\\code\\ch-cli\\ch-cli-win-x64.1.1.5\\ch-cli.exe",
+      "commandLineArgs": "ch-cli.exe import-package-setting-applier actions -d C:\\Users\\eie\\Downloads\\package-20240621_142526 -cat Unilever-Deployment -name Unilever-Connectionstrings"
+    },
+    "Sitecore.CH.Cli.Plugin.ImportPackageSettingApplier - Default": {
+      "commandName": "Project",
+      "commandLineArgs": "ch-cli.exe import-package-setting-applier --help",
+      "workingDirectory": "C:\\code\\ch-cli\\ch-cli-win-x64.1.1.5",
+      "nativeDebugging": false
+    }
+  }
+}
