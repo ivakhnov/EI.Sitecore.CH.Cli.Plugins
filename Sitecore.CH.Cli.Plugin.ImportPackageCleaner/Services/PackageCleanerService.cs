@@ -84,6 +84,8 @@ namespace Sitecore.CH.Cli.Plugin.ImportPackageCleaner.Services
                 CleanActionVariables(token);
 
             CleanUserGroupIdentifiers(token);
+
+            SortCultures(token);
         }
 
         public void SaveFile(JToken token, string jsonFilePath)
@@ -162,6 +164,19 @@ namespace Sitecore.CH.Cli.Plugin.ImportPackageCleaner.Services
                 var serviceBusConnectionString = token.SelectToken("data.properties.Settings.connectionString") as JValue;
                 if (serviceBusConnectionString != null)
                     serviceBusConnectionString.Value = string.Empty;
+            }
+        }
+
+        private void SortCultures(JToken token)
+        {
+            var cultures = token.SelectToken("$.data.cultures") as JArray;
+            if (cultures != null)
+            {
+                var tuple = cultures.Select(elem => (elem, elem.ToString())).ToList();
+
+                var tokens = tuple.OrderBy(elem => elem.Item2).Select(elem => elem.elem).ToList();
+                cultures.Clear();
+                tokens.ForEach(cultures.Add);
             }
         }
 
