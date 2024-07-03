@@ -169,14 +169,42 @@ namespace Sitecore.CH.Cli.Plugin.ImportPackageCleaner.Services
 
         private void SortCultures(JToken token)
         {
-            var cultures = token.SelectToken("$.data.cultures") as JArray;
-            if (cultures != null)
-            {
-                var tuple = cultures.Select(elem => (elem, elem.ToString())).ToList();
+            SortKeyValues(token, "$.data.cultures");
+            SortKeyValues(token, "$.data..labels");
+            SortKeyValues(token, "$.data..associated_labels");
+        }
 
-                var tokens = tuple.OrderBy(elem => elem.Item2).Select(elem => elem.elem).ToList();
-                cultures.Clear();
-                tokens.ForEach(cultures.Add);
+        private void SortKeyValues(JToken token, string path)
+        {
+            var arrayOfTokenValues = token.SelectTokens(path);
+            if (arrayOfTokenValues != null && arrayOfTokenValues.Any())
+            {
+                foreach (var values in arrayOfTokenValues)
+                {
+                    // it's either an array or an object..
+                    var JArrayValue = values as JArray;
+                    if (JArrayValue != null)
+                    {
+                        var tuple = JArrayValue.Select(elem => (elem, elem.ToString())).ToList();
+
+                        var tokens = tuple.OrderBy(elem => elem.Item2).Select(elem => elem.elem).ToList();
+                        JArrayValue.Clear();
+                        tokens.ForEach(JArrayValue.Add);
+                    }
+                    else
+                    // Although the JSON spec defines a JSON object as an unordered set of properties,
+                    // Json.Net's JObject class does appear to maintain the order of properties within it.
+                    // You can sort the properties by value like this:
+                    {
+                        JObject voteObj = values as JObject;
+
+                        var sortedObj = new JObject(
+                            voteObj.Properties().OrderBy(elem => (string)elem.Name)
+                        );
+
+                        values.Replace(sortedObj);
+                    }
+                }
             }
         }
 
@@ -219,14 +247,7 @@ namespace Sitecore.CH.Cli.Plugin.ImportPackageCleaner.Services
 
         private void SortRules(JToken token)
         {
-            var JArray = token.SelectToken("$.data.rules") as JArray;
-
-            var tuple = JArray.Select(elem => (elem, elem.ToString())).ToList();
-
-            var tokens = tuple.OrderBy(elem => elem.Item2).Select(elem => elem.elem).ToList();
-            JArray.Clear();
-            tokens.ForEach(JArray.Add);
-
+            SortKeyValues(token, "$.data.rules");
         }
 
         private void Remove(JToken item)
